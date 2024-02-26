@@ -33,20 +33,28 @@ imgCollection[counterImg].classList.remove('hide');
 
 // 5.
 down.addEventListener('click', function(){
+    // 7.
+    up.classList.remove('hide');
+    
+    // 6.
+    imgCollection[counterImg--].classList.add('hide');
+    imgCollection[counterImg].classList.remove('hide');
     // 8.
     if(counterImg == 0){
         down.classList.add('hide')
     }
-
-    // 6.
-    imgCollection[counterImg--].classList.add('hide');
-    imgCollection[counterImg].classList.remove('hide');
 })
 
 up.addEventListener('click', function(){
+    
     // 7.
     down.classList.remove('hide');
     // 6.
     imgCollection[counterImg++].classList.add('hide');
     imgCollection[counterImg].classList.remove('hide');
+
+    // 10.
+    if(counterImg == images.length - 1){
+        up.classList.add('hide');
+    }
 })
